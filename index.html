@@ -148,9 +148,29 @@
                 font-size: 18px;
             }
         }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 30px;
+            background-color: #ff66a3;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            cursor: pointer;
+            text-align: center;
+            display: none;
+            transition: opacity 0.3s ease;
+        }
+        .back-to-top:hover {
+            background-color: #e05590;
+        }
     </style>
 </head>
-<body>
+<body id="top">
 
 <header>
     <h1>Ayathanda's Kitchen</h1>
@@ -211,12 +231,32 @@
     <img src="Food/WhatsApp Image 2025-01-20 at 20.15.27_f2d13097.jpg" alt="Dish 1">
     <img src="Food/WhatsApp Image 2025-01-20 at 20.15.28_9f843ef0.jpg" alt="Dish 2">
     <img src="Food/WhatsApp Image 2025-01-20 at 20.15.28_c821539c.jpg" alt="Dish 3">
-    <img src="Food/WhatsApp Image 2025-01-20 at 20.15.29_ddc5beac.jpg" alt="Dish 3">
+    <img src="Food/WhatsApp Image 2025-01-20 at 20.15.29_ddc5beac.jpg" alt="Dish 4">
 </section>
 
 <footer id="contact">
     <p>Contact us on <a href="tel:+27761868529">+27 76 186 8529</a> or <a href="mailto:info@foodseller.com">info@foodseller.com</a></p>
 </footer>
+
+<a href="#top" class="back-to-top">&#8593;</a>
+
+<script>
+    window.onscroll = function() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            document.querySelector('.back-to-top').style.display = 'block';
+        } else {
+            document.querySelector('.back-to-top').style.display = 'none';
+        }
+    };
+
+    document.querySelector('.back-to-top').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
 
 </body>
 </html>
